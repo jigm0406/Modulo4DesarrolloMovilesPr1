@@ -8,25 +8,36 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="mx.unam.jigm.practica1.ActividadPrincipal">
+    tools:context="mx.unam.jigm.practica1.ActividadPrincipal"
+    android:gravity="center_vertical|center_horizontal"
+    android:theme="@style/AppTheme"
+    android:touchscreenBlocksFocus="false"
+    android:background="@color/dim_foreground_disabled_material_dark">
     <LinearLayout
         android:id="@+id/LiLyPrimera"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:gravity="right"
             android:id="@+id/TxtDisplay"
-            android:layout_weight="0.25"
+            android:layout_weight="0.35"
          android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-            android:text="0"
-            />
+         android:layout_height="match_parent"
+            android:text="@string/display"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"
+            android:drawableBottom="@color/abc_primary_text_disable_only_material_dark"
+            android:background="@color/bright_foreground_disabled_material_dark"
+            android:layout_gravity="bottom" />
         <Button
             android:id="@+id/BtnBorrar"
-            android:layout_weight="0.75"
+            android:layout_weight="0.65"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Borrar"/>
+            android:text="@string/borrar"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LiLySegunda"
@@ -38,25 +49,33 @@
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="7"/>
+            android:text="@string/siete"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn8"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="8"/>
+            android:text="@string/ocho"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn9"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="9"/>
+            android:text="@string/nueve"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnDivision"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="/"/>
+            android:text="@string/division"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LiLyTercera"
@@ -68,25 +87,33 @@
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4"/>
+            android:text="@string/cuatro"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn5"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="5"/>
+            android:text="@string/cinco"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn6"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="6"/>
+            android:text="@string/seis"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnMultiplica"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="X"/>
+            android:text="@string/multiplica"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LiLyCuarta"
@@ -98,25 +125,33 @@
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1"/>
+            android:text="@string/uno"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn2"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2"/>
+            android:text="@string/dos"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn3"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3"/>
+            android:text="@string/tres"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnResta"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="-"/>
+            android:text="@string/resta"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LiLyQuinta"
@@ -128,24 +163,32 @@
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="."/>
+            android:text="@string/punto"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn0"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0"/>
+            android:text="@string/cero"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnResultado"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="="/>
+            android:text="@string/resultado"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnSuma"
             android:layout_weight="0.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+"/>
+            android:text="@string/suma"
+            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textColor="#1c1694"/>
     </LinearLayout>
 </LinearLayout>
