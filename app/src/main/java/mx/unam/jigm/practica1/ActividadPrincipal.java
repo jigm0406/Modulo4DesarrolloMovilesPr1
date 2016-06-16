@@ -10,7 +10,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
    //variables para hacer las operaciones
     Double Num1,Num2,nResultado;
     //para poner el resultado
-    private TextView txtJDisplay;
+     TextView txtJDisplay;
     //para ir concatenando los numeros
     String cadena1="",cadena2="",TxtResultado="";
     //cambia cuando se oprime una operación
@@ -26,7 +26,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_principal);
-        TextView txtJDisplay=(TextView) findViewById(R.id.TxtDisplay);
+        txtJDisplay=(TextView) findViewById(R.id.TxtDisplay);
         //se preparan los botones para escuchar el onclick
         findViewById(R.id.BtnBorrar).setOnClickListener(this);
         findViewById(R.id.Btn7).setOnClickListener(this);
@@ -46,142 +46,134 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         findViewById(R.id.BtnResultado).setOnClickListener(this);
         findViewById(R.id.BtnSuma).setOnClickListener(this);
     }
+//para inicializar variables en calculadora
+    private void limpia(int nLimpiaDisplay){
+        cambia=false;
+        cadena1="";
+        cadena2="";
+        Boperacion=false;
+        punto=false;
+        if (nLimpiaDisplay==1)
+            txtJDisplay.setText("0");
+    }
+    //para definir operacion
+    private void operacion(String Soperacion){
+        switch (Soperacion)
+        {
+            case "/":
+                soperacion="/";
+                break;
+            case "+":
+                soperacion="+";
+                break;
+            case "-":
+                soperacion="-";
+                break;
+            case "*":
+                soperacion="*";
+                break;
+        }
+        if (Boperacion==false && cadena1!="")
+        {
+            cambia=true;
+            Boperacion=true;
+            punto=false;
+            txtJDisplay.setText("");
+            }
+        else
+            Toast.makeText(getApplicationContext(),"Solo una operación",Toast.LENGTH_SHORT).show();
 
+    }
+    //para ir concatenando numero en operadores
+    private void CadenaNumero(String StrNumero)
+    {
+        if (cambia==false){
+            cadena1=cadena1+StrNumero;
+            txtJDisplay.setText(cadena1);}
+        else{
+            cadena2=cadena2+StrNumero;
+            txtJDisplay.setText(cadena2);}
+    }
     @Override
+    // accion del onclick de los botones
     public void onClick(View v) {
         switch (v.getId())
         {
             case R.id.BtnBorrar:
-                //inicializa todo
-
+                //inicializa
+                limpia(1);
                 break;
             case R.id.Btn7:
-                if (cambia==false){
-                    cadena1=cadena1+"7";
-                    txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"7";
-                    txtJDisplay.setText(cadena2);}
+                CadenaNumero("7");
                 break;
             case R.id.Btn8:
-                if (cambia==false){
-                    cadena1=cadena1+"8";
-                    txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"8";
-                txtJDisplay.setText(cadena2);}
+                CadenaNumero("8");
                 break;
             case R.id.Btn9:
-                if (cambia==false){
-                    cadena1=cadena1+"9";
-                    txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"9";
-                    txtJDisplay.setText(cadena2);}
+                CadenaNumero("9");
                 break;
             case R.id.BtnDivision:
-                if (Boperacion==false && cadena1!="")
-                {cambia=true;
-                soperacion="/";}
-                else
-                    Toast.makeText(getApplicationContext(),"Solo una operación",Toast.LENGTH_SHORT).show();
+                operacion("/");
                 break;
             case R.id.Btn4:
-                if (cambia==false){
-                    cadena1=cadena1+"4";
-                    txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"4";
-                    txtJDisplay.setText(cadena2);}
+                CadenaNumero("4");
                 break;
             case R.id.Btn5:
-                if (cambia==false){
-                    cadena1=cadena1+"5";
-                    txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"5";
-                    txtJDisplay.setText(cadena2);}
+                CadenaNumero("5");
+                break;
+            case R.id.Btn6:
+                CadenaNumero("6");
                 break;
             case R.id.BtnMultiplica:
-                if (Boperacion==false && cadena1!="")
-                {cambia=true;
-                soperacion="*";}
-                else
-                    Toast.makeText(getApplicationContext(),"Solo una operación",Toast.LENGTH_SHORT).show();
+                operacion("*");
                 break;
             case R.id.Btn1:
-                if (cambia==false){
-                    cadena1=cadena1+"1";
-                txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"1";
-                txtJDisplay.setText(cadena2);}
+                CadenaNumero("1");
                 break;
             case R.id.Btn2:
-                if (cambia==false){
-                    cadena1=cadena1+"2";
-                    txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"2";
-                    txtJDisplay.setText(cadena2);}
+                CadenaNumero("2");
                 break;
             case R.id.Btn3:
-                if (cambia==false){
-                    cadena1=cadena1+"3";
-                txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"3";
-                txtJDisplay.setText(cadena2);}
+                CadenaNumero("3");
                 break;
             case R.id.BtnResta:
-                if (Boperacion==false && cadena1!="")
-                {
-                cambia=true;
-                soperacion="-";}
-                else
-                    Toast.makeText(getApplicationContext(),"Solo una operación",Toast.LENGTH_SHORT).show();
+                operacion("-");
                 break;
             case R.id.BtnPunto:
                 if (punto==false) {
                     if (cambia = false){
                         cadena1 = cadena1 + ".";
-                    txtJDisplay.setText(cadena1);}
+                        punto=true;
+                        txtJDisplay.setText(cadena1);}
                     else{
                         cadena2 = cadena2 + ".";
-                    txtJDisplay.setText(cadena2);}
+                        punto=true;
+                        txtJDisplay.setText(cadena2);}
                 }
                 else
                 //poner toast
                     Toast.makeText(getApplicationContext(),"Solo un punto en número",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Btn0:
-                if (cambia=false){
-                    cadena1=cadena1+"0";
-                    txtJDisplay.setText(cadena1);}
-                else{
-                    cadena2=cadena2+"0";
-                txtJDisplay.setText(cadena2);}
+                CadenaNumero("0");
                 break;
             case R.id.BtnResultado:
-                if (cadena1!="" && cadena2!=""){
-                Num1=Double.parseDouble(cadena1);
-                Num2=Double.parseDouble(cadena2);
-                if (soperacion=="+") nResultado=Num1+Num2;
-                if (soperacion=="-") nResultado=Num1-Num2;
-                if (soperacion=="*") nResultado=Num1-Num2;
-                if (soperacion=="/") nResultado=Num1/Num2;
-                String txtResultado= String.valueOf(nResultado);
-                txtJDisplay.setText(txtResultado);}
+                    if (cadena1!="" && cadena2!=""){
+                        Num1=Double.parseDouble(cadena1);
+                        Num2=Double.parseDouble(cadena2);
+                        if (soperacion=="+") nResultado=Num1+Num2;
+                        if (soperacion=="-") nResultado=Num1-Num2;
+                        if (soperacion=="*") nResultado=Num1*Num2;
+                        if (soperacion=="/") nResultado=Num1/Num2;
+                        String txtResultado= String.valueOf(nResultado);
+                        txtJDisplay.setText(txtResultado);
+                        limpia(0);
+                    }
                 else
                     Toast.makeText(getApplicationContext(),"Se espera un numero",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.BtnSuma:
-                if (Boperacion==false && cadena1!="")
-                {
-                cambia=true;
-                soperacion="+";}
-                else
-                    Toast.makeText(getApplicationContext(),"Solo una operación, se espera un numero",Toast.LENGTH_SHORT).show();
+                operacion("+");
                 break;
         }
     }

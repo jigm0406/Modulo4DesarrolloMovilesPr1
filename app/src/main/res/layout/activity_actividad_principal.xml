@@ -12,7 +12,7 @@
     android:gravity="center_vertical|center_horizontal"
     android:theme="@style/AppTheme"
     android:touchscreenBlocksFocus="false"
-    android:background="@color/dim_foreground_disabled_material_dark">
+    android:background="@color/background_material_dark">
     <LinearLayout
         android:id="@+id/LiLyPrimera"
         android:orientation="horizontal"
@@ -25,9 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/display"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="40dp"
             android:textColor="#1c1694"
-            android:layout_gravity="bottom" />
+            android:layout_gravity="bottom"
+            android:background="#EFFBF5"/>
         <Button
             android:id="@+id/BtnBorrar"
             android:layout_weight="0.65"
@@ -72,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/division"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
     </LinearLayout>
     <LinearLayout
@@ -86,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cuatro"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn5"
@@ -94,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cinco"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn6"
@@ -102,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/seis"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnMultiplica"
@@ -110,7 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/multiplica"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
     </LinearLayout>
     <LinearLayout
@@ -124,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/uno"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn2"
@@ -132,7 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/dos"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn3"
@@ -140,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tres"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnResta"
@@ -148,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/resta"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
     </LinearLayout>
     <LinearLayout
@@ -162,7 +163,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/punto"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn0"
@@ -170,7 +171,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cero"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnResultado"
@@ -178,7 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/resultado"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnSuma"
@@ -186,7 +187,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/suma"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
     </LinearLayout>
 </LinearLayout>
