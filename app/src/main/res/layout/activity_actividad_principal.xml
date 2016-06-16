@@ -22,13 +22,11 @@
             android:gravity="right"
             android:id="@+id/TxtDisplay"
             android:layout_weight="0.35"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/display"
             android:textSize="@dimen/abc_alert_dialog_button_bar_height"
             android:textColor="#1c1694"
-            android:drawableBottom="@color/abc_primary_text_disable_only_material_dark"
-            android:background="@color/bright_foreground_disabled_material_dark"
             android:layout_gravity="bottom" />
         <Button
             android:id="@+id/BtnBorrar"
@@ -36,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/borrar"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694" />
     </LinearLayout>
     <LinearLayout
@@ -50,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/siete"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn8"
@@ -58,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ocho"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/Btn9"
@@ -66,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nueve"
-            android:textSize="@dimen/abc_alert_dialog_button_bar_height"
+            android:textSize="48dp"
             android:textColor="#1c1694"/>
         <Button
             android:id="@+id/BtnDivision"
