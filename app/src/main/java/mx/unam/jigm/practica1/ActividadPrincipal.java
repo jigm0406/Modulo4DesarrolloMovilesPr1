@@ -11,6 +11,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     Double Num1,Num2,nResultado;
     //para poner el resultado
      TextView txtJDisplay;
+
     //para ir concatenando los numeros
     String cadena1="",cadena2="",TxtResultado="";
     //cambia cuando se oprime una operación
@@ -26,6 +27,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_principal);
+        //preparan textview
         txtJDisplay=(TextView) findViewById(R.id.TxtDisplay);
         //se preparan los botones para escuchar el onclick
         findViewById(R.id.BtnBorrar).setOnClickListener(this);
@@ -45,6 +47,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         findViewById(R.id.Btn0).setOnClickListener(this);
         findViewById(R.id.BtnResultado).setOnClickListener(this);
         findViewById(R.id.BtnSuma).setOnClickListener(this);
+
     }
 //para inicializar variables en calculadora
     private void limpia(int nLimpiaDisplay){
@@ -53,8 +56,9 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         cadena2="";
         Boperacion=false;
         punto=false;
-        if (nLimpiaDisplay==1)
+        if (nLimpiaDisplay==1){
             txtJDisplay.setText("0");
+            }
     }
     //para definir operacion
     private void operacion(String Soperacion){
@@ -73,15 +77,14 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                 soperacion="*";
                 break;
         }
-        if (Boperacion==false && cadena1!="")
+       if (Boperacion==false && cadena1!="")
         {
             cambia=true;
             Boperacion=true;
             punto=false;
-            txtJDisplay.setText("");
             }
         else
-            Toast.makeText(getApplicationContext(),"Solo una operación",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Solo una operación a la vez",Toast.LENGTH_SHORT).show();
 
     }
     //para ir concatenando numero en operadores
@@ -89,18 +92,19 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     {
         if (cambia==false){
             cadena1=cadena1+StrNumero;
-            txtJDisplay.setText(cadena1);}
+            txtJDisplay.setText(cadena1);
+            }
         else{
             cadena2=cadena2+StrNumero;
             txtJDisplay.setText(cadena2);}
     }
+
     @Override
     // accion del onclick de los botones
     public void onClick(View v) {
         switch (v.getId())
         {
             case R.id.BtnBorrar:
-                //inicializa
                 limpia(1);
                 break;
             case R.id.Btn7:
@@ -141,24 +145,24 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.BtnPunto:
                 if (punto==false) {
-                    if (cambia = false){
+                    if (cambia == false){
                         cadena1 = cadena1 + ".";
-                        punto=true;
-                        txtJDisplay.setText(cadena1);}
+                        txtJDisplay.setText(cadena1);
+                       }
                     else{
                         cadena2 = cadena2 + ".";
-                        punto=true;
                         txtJDisplay.setText(cadena2);}
                 }
                 else
                 //poner toast
-                    Toast.makeText(getApplicationContext(),"Solo un punto en número",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Usar solo un punto en número",Toast.LENGTH_SHORT).show();
+                punto=true;
                 break;
             case R.id.Btn0:
                 CadenaNumero("0");
                 break;
             case R.id.BtnResultado:
-                    if (cadena1!="" && cadena2!=""){
+                    if (cadena1!="" && cadena2!="" && soperacion!="" ){
                         Num1=Double.parseDouble(cadena1);
                         Num2=Double.parseDouble(cadena2);
                         if (soperacion=="+") nResultado=Num1+Num2;
@@ -170,7 +174,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                         limpia(0);
                     }
                 else
-                    Toast.makeText(getApplicationContext(),"Se espera un numero",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Espera de dos numeros y ",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.BtnSuma:
                 operacion("+");
