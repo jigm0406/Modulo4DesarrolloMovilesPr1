@@ -32,15 +32,37 @@
         android:textColor="#1c1694"
         android:layout_gravity="center"
         android:background="#EFFBF5"/>
-    <Button
-        android:id="@+id/BtnBorrar"
-        android:layout_weight="0.73"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/borrar"
-        android:textSize="40dp"
-        android:textColor="#1c1694" />
+
 </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/BtnBorrar"
+            android:layout_weight="0.15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/borrar"
+            android:textSize="40dp"
+            android:textColor="#1c1694" />
+        <Button
+            android:id="@+id/BtnMod"
+            android:layout_weight="0.15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Mod"
+            android:textSize="40dp"
+            android:textColor="#1c1694" />
+        <Button
+            android:id="@+id/BtnDel"
+            android:layout_weight="0.15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/del"
+            android:textSize="40dp"
+            android:textColor="#1c1694" />
+    </LinearLayout>
 <LinearLayout
     android:id="@+id/LiLySegunda"
     android:orientation="horizontal"

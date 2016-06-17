@@ -11,7 +11,6 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     Double Num1,Num2,nResultado;
     //para poner el resultado
      TextView txtJDisplay;
-
     //para ir concatenando los numeros
     String cadena1="",cadena2="",TxtResultado="";
     //cambia cuando se oprime una operación
@@ -30,6 +29,8 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         //preparan textview
         txtJDisplay=(TextView) findViewById(R.id.TxtDisplay);
         //se preparan los botones para escuchar el onclick
+        findViewById(R.id.BtnDel).setOnClickListener(this);
+        findViewById(R.id.BtnMod).setOnClickListener(this);
         findViewById(R.id.BtnBorrar).setOnClickListener(this);
         findViewById(R.id.Btn7).setOnClickListener(this);
         findViewById(R.id.Btn8).setOnClickListener(this);
@@ -74,7 +75,10 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                 soperacion="-";
                 break;
             case "*":
-                soperacion="*";
+            soperacion="*";
+            break;
+            case "%":
+                soperacion="%";
                 break;
         }
        if (Boperacion==false && cadena1!="")
@@ -91,19 +95,52 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     private void CadenaNumero(String StrNumero)
     {
         if (cambia==false){
+            if (cadena1=="0") {cadena1="";}
             cadena1=cadena1+StrNumero;
             txtJDisplay.setText(cadena1);
             }
         else{
+            if (cadena2=="0") {cadena2="";}
             cadena2=cadena2+StrNumero;
             txtJDisplay.setText(cadena2);}
     }
-
+private void puntocadena(String cadenainterna){
+    if (cadenainterna.substring(cadenainterna.length()-1).equals(".")){
+        punto=false;
+    }
+}
     @Override
     // accion del onclick de los botones
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
+            case R.id.BtnDel:
+                if (cambia == false)
+                {
+                    if (cadena1.length()>1){
+                        puntocadena(cadena1);
+                        String Subcadena1=cadena1.substring(0,cadena1.length()-1);
+                        cadena1 = Subcadena1;}
+                    else
+                        {cadena1 = "0";
+                            limpia(1);}
+                    txtJDisplay.setText(cadena1);
+                 }
+                else
+                {
+                    if (cadena2.length()>1){
+                        puntocadena(cadena2);
+                        String Subcadena2=cadena2.substring(0,cadena2.length()-1);
+                        cadena2=Subcadena2;
+                    }
+                      else
+                        { cadena2="0";
+                            limpia(1);}
+                    txtJDisplay.setText(cadena2);
+                }
+                break;
+            case R.id.BtnMod:
+                operacion("%");
+                break;
             case R.id.BtnBorrar:
                 limpia(1);
                 break;
@@ -169,6 +206,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                         if (soperacion=="-") nResultado=Num1-Num2;
                         if (soperacion=="*") nResultado=Num1*Num2;
                         if (soperacion=="/") nResultado=Num1/Num2;
+                        if (soperacion=="%") nResultado=Num1%Num2;
                         String txtResultado= String.valueOf(nResultado);
                         txtJDisplay.setText(txtResultado);
                         limpia(0);
