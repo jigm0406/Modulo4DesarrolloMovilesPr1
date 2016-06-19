@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="element_operacion">Espera 2 numeros y operación</string>
+    <string name="element_punto">Usar solo un punto en número</string>
+    <string name="element_division">Segundo número mayor 0</string>
+    <string name="element_operador">Una operación a la vez</string>
+    <string name="element_number">Necesita un numero al menos</string>
+</resources>

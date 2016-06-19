@@ -16,11 +16,33 @@
 
 <LinearLayout
     android:id="@+id/LiLyPrimera"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
+    <TextView
+        android:gravity="right"
+        android:id="@+id/TxtDisplay1"
+        android:layout_weight="0.27"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/display1"
+        android:textSize="25dp"
+        android:textColor="#1c1694"
+        android:layout_gravity="center"
+        android:background="#EFFBF5"/>
+    <TextView
+        android:gravity="right"
+        android:id="@+id/TxtDisplay2"
+        android:layout_weight="0.27"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/display2"
+        android:textSize="25dp"
+        android:textColor="#1c1694"
+        android:layout_gravity="center"
+        android:background="#EFFBF5"/>
     <TextView
         android:gravity="right"
         android:id="@+id/TxtDisplay"

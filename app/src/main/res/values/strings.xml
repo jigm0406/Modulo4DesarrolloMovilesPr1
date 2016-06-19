@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Practica1:Calcula una operación</string>
     <!--para las etiquetas de los botones-->
+    <string name="display1"></string>
+    <string name="display2"></string>
     <string name="display">0</string>
     <string name="Mod">MOD</string>
     <string name="borrar">C</string>
@@ -21,4 +23,9 @@
     <string name="cero">0</string>
     <string name="resultado">=</string>
     <string name="suma">+</string>
+    <string name="element_operacion">Wait 2 numbers and operation..</string>
+    <string name="element_punto">use only point in value</string>
+    <string name="element_division">second number greater than O</string>
+    <string name="element_operador">Only one operation at a time</string>
+    <string name="element_number">You need a least number</string>
 </resources>
