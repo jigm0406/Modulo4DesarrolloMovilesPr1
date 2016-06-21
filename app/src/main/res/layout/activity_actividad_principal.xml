@@ -29,7 +29,7 @@
         android:layout_height="45dp"
         android:text="@string/display1"
         android:textSize="25dp"
-        android:textColor="#1c1694"
+        android:textColor="#1C1C1C"
         android:layout_gravity="center"
         android:background="#EFFBF5"/>
     <TextView
@@ -40,7 +40,7 @@
         android:layout_height="45dp"
         android:text="@string/display2"
         android:textSize="25dp"
-        android:textColor="#1c1694"
+        android:textColor="#1C1C1C"
         android:layout_gravity="center"
         android:background="#EFFBF5"/>
     <TextView
@@ -51,11 +51,36 @@
         android:layout_height="65dp"
         android:text="@string/display"
         android:textSize="48dp"
-        android:textColor="#1c1694"
+        android:textColor="#1C1C1C"
         android:layout_gravity="center"
         android:background="#EFFBF5"/>
 
 </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/BtnBinario"
+            android:text="@string/binario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:textSize="40dp"
+            android:textColor="#1c1694"
+            android:background="#A4A4A4"
+            />
+        <Button
+            android:id="@+id/BtnDecimal"
+            android:text="@string/decimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:textSize="40dp"
+            android:textColor="#1c1694"
+            android:background="#A4A4A4"
+            />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -67,15 +92,8 @@
             android:layout_height="wrap_content"
             android:text="@string/borrar"
             android:textSize="40dp"
-            android:textColor="#1c1694" />
-        <Button
-            android:id="@+id/BtnMod"
-            android:layout_weight="0.15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Mod"
-            android:textSize="40dp"
-            android:textColor="#1c1694" />
+            android:textColor="#1c1694"
+            android:background="#CEF6F5"/>
         <Button
             android:id="@+id/BtnDel"
             android:layout_weight="0.15"
@@ -83,7 +101,18 @@
             android:layout_height="wrap_content"
             android:text="@string/del"
             android:textSize="40dp"
-            android:textColor="#1c1694" />
+            android:textColor="#1c1694"
+            android:background="#CEF6F5"/>
+        <Button
+            android:id="@+id/BtnMod"
+            android:layout_weight="0.15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Mod"
+            android:textSize="40dp"
+            android:textColor="#1c1694"
+            android:background="#58FAF4"/>
+
     </LinearLayout>
 <LinearLayout
     android:id="@+id/LiLySegunda"
@@ -97,7 +126,8 @@
         android:layout_height="wrap_content"
         android:text="@string/siete"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/Btn8"
         android:layout_weight="0.25"
@@ -105,7 +135,8 @@
         android:layout_height="wrap_content"
         android:text="@string/ocho"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/Btn9"
         android:layout_weight="0.25"
@@ -113,7 +144,8 @@
         android:layout_height="wrap_content"
         android:text="@string/nueve"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/BtnDivision"
         android:layout_weight="0.25"
@@ -121,7 +153,8 @@
         android:layout_height="wrap_content"
         android:text="@string/division"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#58FAF4"/>
 </LinearLayout>
 <LinearLayout
     android:id="@+id/LiLyTercera"
@@ -135,7 +168,8 @@
         android:layout_height="wrap_content"
         android:text="@string/cuatro"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/Btn5"
         android:layout_weight="0.25"
@@ -143,7 +177,8 @@
         android:layout_height="wrap_content"
         android:text="@string/cinco"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/Btn6"
         android:layout_weight="0.25"
@@ -151,7 +186,8 @@
         android:layout_height="wrap_content"
         android:text="@string/seis"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/BtnMultiplica"
         android:layout_weight="0.25"
@@ -159,7 +195,8 @@
         android:layout_height="wrap_content"
         android:text="@string/multiplica"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#58FAF4"/>
 </LinearLayout>
 <LinearLayout
     android:id="@+id/LiLyCuarta"
@@ -173,7 +210,8 @@
         android:layout_height="wrap_content"
         android:text="@string/uno"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/Btn2"
         android:layout_weight="0.25"
@@ -181,7 +219,8 @@
         android:layout_height="wrap_content"
         android:text="@string/dos"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/Btn3"
         android:layout_weight="0.25"
@@ -189,7 +228,8 @@
         android:layout_height="wrap_content"
         android:text="@string/tres"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/BtnResta"
         android:layout_weight="0.25"
@@ -197,7 +237,8 @@
         android:layout_height="wrap_content"
         android:text="@string/resta"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#58FAF4"/>
 </LinearLayout>
 <LinearLayout
     android:id="@+id/LiLyQuinta"
@@ -211,7 +252,9 @@
         android:layout_height="wrap_content"
         android:text="@string/punto"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:gravity="center"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/Btn0"
         android:layout_weight="0.25"
@@ -219,7 +262,8 @@
         android:layout_height="wrap_content"
         android:text="@string/cero"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#D8D8D8"/>
     <Button
         android:id="@+id/BtnResultado"
         android:layout_weight="0.25"
@@ -227,7 +271,8 @@
         android:layout_height="wrap_content"
         android:text="@string/resultado"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#58FAF4"/>
     <Button
         android:id="@+id/BtnSuma"
         android:layout_weight="0.25"
@@ -235,6 +280,7 @@
         android:layout_height="wrap_content"
         android:text="@string/suma"
         android:textSize="48dp"
-        android:textColor="#1c1694"/>
+        android:textColor="#1c1694"
+        android:background="#58FAF4"/>
 </LinearLayout>
 </LinearLayout>

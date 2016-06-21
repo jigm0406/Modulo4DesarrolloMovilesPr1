@@ -3,6 +3,7 @@ package mx.unam.jigm.practica1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,8 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     String soperacion="";
     //para cuando eligio una operación
     Boolean Boperacion=false;
+   //para operacion binaria
+    Boolean bBinario=false;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +55,18 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         findViewById(R.id.Btn0).setOnClickListener(this);
         findViewById(R.id.BtnResultado).setOnClickListener(this);
         findViewById(R.id.BtnSuma).setOnClickListener(this);
-
+        findViewById(R.id.BtnDecimal).setOnClickListener(this);
+        findViewById(R.id.BtnBinario).setOnClickListener(this);
     }
-    @Override
     // accion del onclick de los botones
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.BtnBinario:
+               pBina();
+                break;
+            case R.id.BtnDecimal:
+                pDecimal();
+                break;
             case R.id.BtnDel:
                 Pdelete();
                 break;
@@ -117,6 +126,60 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                 break;
         }
     }
+    //para ir concatenando numero en operadores
+    private void CadenaNumero(String StrNumero)
+    {
+        if (cambia==false){
+            if (cadena1=="0") {cadena1="";}
+            cadena1=cadena1+StrNumero;
+            txtJDisplay.setText(cadena1);
+            txtJDisplay1.setText(cadena1);
+        }
+        else{
+            if (cadena2=="0") {cadena2="";}
+            cadena2=cadena2+StrNumero;
+            txtJDisplay.setText(cadena2);
+        }
+    }
+    //para preparar los botones para suma decimal
+    private void pDecimal()
+    {
+        limpia(1);
+        findViewById(R.id.Btn2).setEnabled(true);
+        findViewById(R.id.Btn3).setEnabled(true);
+        findViewById(R.id.Btn4).setEnabled(true);
+        findViewById(R.id.Btn5).setEnabled(true);
+        findViewById(R.id.Btn5).setEnabled(true);
+        findViewById(R.id.Btn6).setEnabled(true);
+        findViewById(R.id.Btn7).setEnabled(true);
+        findViewById(R.id.Btn8).setEnabled(true);
+        findViewById(R.id.Btn9).setEnabled(true);
+        findViewById(R.id.BtnMultiplica).setEnabled(true);
+        findViewById(R.id.BtnDivision).setEnabled(true);
+        findViewById(R.id.BtnResta).setEnabled(true);
+        findViewById(R.id.BtnMod).setEnabled(true);
+        findViewById(R.id.BtnPunto).setEnabled(true);
+        bBinario=false;
+    }
+    //para preparar los botones para suma binaria
+    private void pBina(){
+        limpia(1);
+        findViewById(R.id.Btn2).setEnabled(false);
+        findViewById(R.id.Btn3).setEnabled(false);
+        findViewById(R.id.Btn4).setEnabled(false);
+        findViewById(R.id.Btn5).setEnabled(false);
+        findViewById(R.id.Btn5).setEnabled(false);
+        findViewById(R.id.Btn6).setEnabled(false);
+        findViewById(R.id.Btn7).setEnabled(false);
+        findViewById(R.id.Btn8).setEnabled(false);
+        findViewById(R.id.Btn9).setEnabled(false);
+        findViewById(R.id.BtnMultiplica).setEnabled(false);
+        findViewById(R.id.BtnDivision).setEnabled(false);
+        findViewById(R.id.BtnResta).setEnabled(false);
+        findViewById(R.id.BtnMod).setEnabled(false);
+        findViewById(R.id.BtnPunto).setEnabled(false);
+        bBinario=true;
+    }
     //para inicializar variables en calculadora
     private void limpia(int nLimpiaDisplay){
         cambia=false;
@@ -163,21 +226,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(),R.string.element_operador,Toast.LENGTH_SHORT).show();
 
     }
-    //para ir concatenando numero en operadores
-    private void CadenaNumero(String StrNumero)
-    {
-        if (cambia==false){
-            if (cadena1=="0") {cadena1="";}
-            cadena1=cadena1+StrNumero;
-            txtJDisplay.setText(cadena1);
-            txtJDisplay1.setText(cadena1);
-        }
-        else{
-            if (cadena2=="0") {cadena2="";}
-            cadena2=cadena2+StrNumero;
-            txtJDisplay.setText(cadena2);
-        }
-    }
+
     private void puntocadena(String cadenainterna){
         if (cadenainterna.substring(cadenainterna.length()-1).equals(".")){
             punto=false;
@@ -210,11 +259,30 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
             txtJDisplay.setText(cadena2);
         }
     }
+    //para el resultado al oprimir el boton de igual
     private void pResultado(){
+        String txtResultado="";
         if (cadena1!="" && cadena2!="" && soperacion!="" ){
             Num1=Double.parseDouble(cadena1);
             Num2=Double.parseDouble(cadena2);
-            if (soperacion=="+") nResultado=Num1+Num2;
+            if (soperacion=="+")
+            {
+                if (bBinario==false)
+                {nResultado=Num1+Num2;}
+                else
+                {
+                    //obtener resultado binario
+                   // int[] BNum1=arreglocadena(cadena1);
+                   // int[] BNum2=arreglocadena(cadena2);
+                   // nResultado = Double.parseDouble(sumBinAndBin(BNum1,BNum2));
+                    Integer bNum1 = Integer.parseInt(cadena1, 2);
+                    Integer bNum2 = Integer.parseInt(cadena2, 2);
+                    Integer bRes = bNum1+ bNum2;
+                    txtResultado =   Integer.toString(bRes,2);
+                    //nResultado = Double.parseDouble(Res);
+                    //String resultado = Integer.toString( c, 2 );
+                }
+            }
             if (soperacion=="-") nResultado=Num1-Num2;
             if (soperacion=="*") nResultado=Num1*Num2;
             if (soperacion=="/") {
@@ -223,7 +291,8 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                 else
                 {Toast.makeText(getApplicationContext(),R.string.element_division,Toast.LENGTH_SHORT).show();}}
             if (soperacion=="%") nResultado=Num1%Num2;
-            String txtResultado= String.valueOf(nResultado);
+            if (bBinario==false){
+            txtResultado= String.valueOf(nResultado);}
             txtJDisplay.setText(txtResultado);
             txtJDisplay1.setText("");
             txtJDisplay2.setText("");
@@ -232,6 +301,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         else
             Toast.makeText(getApplicationContext(),R.string.element_operacion,Toast.LENGTH_SHORT).show();
     }
+    //para agregar punto a las cadenas de numeros
     private void Ppunto(){
         if (punto==false) {
             if (cambia == false){
@@ -247,5 +317,6 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         punto=true;
     }
 
-
 }
+
+

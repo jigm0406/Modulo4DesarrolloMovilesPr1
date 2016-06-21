@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Practica1:Calcula una operación</string>
     <!--para las etiquetas de los botones-->
+    <string name="binario">Bin</string>
+    <string name="decimal">Dec</string>
     <string name="display1"></string>
     <string name="display2"></string>
     <string name="display">0</string>
