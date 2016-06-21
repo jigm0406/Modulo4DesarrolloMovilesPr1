@@ -135,6 +135,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
             cadena1=cadena1+StrNumero;
             txtJDisplay.setText(cadena1);
             txtJDisplay1.setText(cadena1);
+            txtJDisplay2.setText("");
         }
         else{
             if (cadena2=="0") {cadena2="";}
