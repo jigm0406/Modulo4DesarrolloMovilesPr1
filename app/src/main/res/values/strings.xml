@@ -25,9 +25,14 @@
     <string name="cero">0</string>
     <string name="resultado">=</string>
     <string name="suma">+</string>
+    <string name="ModoCalculadora">Modo de Calculo Decimal</string>
     <string name="element_operacion">Wait 2 numbers and operation..</string>
     <string name="element_punto">use only point in value</string>
     <string name="element_division">second number greater than O</string>
     <string name="element_operador">Only one operation at a time</string>
     <string name="element_number">You need a least number</string>
+    <string name="ModeOperationBin">Mode Binary calculation</string>
+    <string name="ModeOperationDec">Mode Decimal calculation</string>
+    <string name="ModeTextOpDecimal">Mode of Calculator Decimal</string>
+    <string name="ModeTextOpBinary">Mode of Calculator Binary</string>
 </resources>

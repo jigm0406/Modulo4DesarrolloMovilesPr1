@@ -13,7 +13,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
     //para poner el resultado
      TextView txtJDisplay;
     //para poner primer numero y operación
-    TextView txtJDisplay1,txtJDisplay2;
+    TextView txtJDisplay1,txtJDisplay2,ModoCalculator;
     //para ir concatenando los numeros
     String cadena1="",cadena2="",TxtResultado="";
     //cambia cuando se oprime una operación
@@ -35,6 +35,7 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         txtJDisplay=(TextView) findViewById(R.id.TxtDisplay);
         txtJDisplay1=(TextView) findViewById(R.id.TxtDisplay1);
         txtJDisplay2=(TextView) findViewById(R.id.TxtDisplay2);
+        ModoCalculator=(TextView) findViewById(R.id.TextModoCalculadora);
         //se preparan los botones para escuchar el onclick
         findViewById(R.id.BtnDel).setOnClickListener(this);
         findViewById(R.id.BtnMod).setOnClickListener(this);
@@ -160,6 +161,8 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         findViewById(R.id.BtnMod).setEnabled(true);
         findViewById(R.id.BtnPunto).setEnabled(true);
         bBinario=false;
+        ModoCalculator.setText(R.string.ModeOperationDec);
+        Toast.makeText(getApplicationContext(), R.string.ModeOperationDec,Toast.LENGTH_SHORT).show();
     }
     //para preparar los botones para suma binaria
     private void pBina(){
@@ -179,6 +182,8 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
         findViewById(R.id.BtnMod).setEnabled(false);
         findViewById(R.id.BtnPunto).setEnabled(false);
         bBinario=true;
+        ModoCalculator.setText(R.string.ModeTextOpBinary);
+        Toast.makeText(getApplicationContext(), R.string.ModeOperationBin,Toast.LENGTH_SHORT).show();
     }
     //para inicializar variables en calculadora
     private void limpia(int nLimpiaDisplay){
@@ -240,22 +245,25 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
             if (cadena1.length()>1){
                 puntocadena(cadena1);
                 String Subcadena1=cadena1.substring(0,cadena1.length()-1);
-                cadena1 = Subcadena1;}
+                cadena1 = Subcadena1;
+                txtJDisplay.setText(cadena1);
+                txtJDisplay1.setText(cadena1);}
             else
-            {cadena1 = "0";
+                {cadena1 = "0";
                 limpia(1);}
-            txtJDisplay.setText(cadena1);
-            txtJDisplay1.setText("");
         }
-        else {
-            if (cadena2.length() > 1) {
+        else
+        {
+            if (cadena2.length() > 1)
+                {
                 puntocadena(cadena2);
                 String Subcadena2 = cadena2.substring(0, cadena2.length() - 1);
                 cadena2 = Subcadena2;
-            } else {
+                }
+            else {
                 cadena2 = "0";
                 limpia(1);
-            }
+                 }
             txtJDisplay.setText(cadena2);
         }
     }
@@ -271,16 +279,11 @@ public class ActividadPrincipal extends AppCompatActivity implements View.OnClic
                 {nResultado=Num1+Num2;}
                 else
                 {
-                    //obtener resultado binario
-                   // int[] BNum1=arreglocadena(cadena1);
-                   // int[] BNum2=arreglocadena(cadena2);
-                   // nResultado = Double.parseDouble(sumBinAndBin(BNum1,BNum2));
+                    //operacion suma en binario
                     Integer bNum1 = Integer.parseInt(cadena1, 2);
                     Integer bNum2 = Integer.parseInt(cadena2, 2);
                     Integer bRes = bNum1+ bNum2;
                     txtResultado =   Integer.toString(bRes,2);
-                    //nResultado = Double.parseDouble(Res);
-                    //String resultado = Integer.toString( c, 2 );
                 }
             }
             if (soperacion=="-") nResultado=Num1-Num2;

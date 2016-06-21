@@ -5,4 +5,8 @@
     <string name="element_division">Segundo número mayor 0</string>
     <string name="element_operador">Una operación a la vez</string>
     <string name="element_number">Necesita un numero al menos</string>
+    <string name="ModeOperationBin">Cálculo Binario</string>
+    <string name="ModeOperationDec">Cálculo Decimal</string>
+    <string name="ModeTextOpDecimal">Modo Calculadora Decimal</string>
+    <string name="ModeTextOpBinary">Modo de Calcular Binario</string>
 </resources>
